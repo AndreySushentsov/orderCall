@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{$url}css/ordercall.css">
+
+
+<div>
+
+	<a href="#" class="ordercall-link">Заказать звонок</a>
+
+	<div class="overlay">
+		<div class="form-wrapper">
+			<form class="order_form" method="POST" action="{$wa->getUrl('shop/frontend/ordercall', ['plugin' => 'ordercall'], true)}">
+				<a href="#" class="close">X</a>
+				<h1>Заказать обратный звонок</h1>
+				{$wa->csrf()}
+				<label>Ваше имя:</label>
+				<input type="text" name="name" required><br />
+				<label>Ваш номер телефона:</label>
+				<input type="text" name="phone" required><br />
+				<input type="submit" value="Отправить">
+				<div class="message ok"></div>
+				<a href="#" class='closed__link'>Закрыть окно формы.</a>
+				<div class="message error">Сообщение не отправлено, напишите нам об этом на почту "e-mail@mail.ru"</div>
+			</form>
+		</div>
+	</div>
+
+<script src="{$url}js/jquery.maskedinput.min.js"></script>
+<script src="{$url}js/ordercall.js"></script>
+
+</div>
