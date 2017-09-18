@@ -2,16 +2,18 @@ $(document).ready( function(){
 
 	$('input[name=phone]').mask("+7 (999) 999?-9999");
 
-	$('.ordercall-link').click(function(){
+	$('.ordercall-link').click(function(e){
+		e.preventDefault();
 		$(this).parent().find('.overlay').show();
 	});
 
-	$('.close').click(function(){
+	$('.close').click(function(e){
+		e.preventDefault();
 		$(this).closest('.overlay').hide();
 	});
 
-	$('.order_form').on( 'submit', function(){
-
+	$('.order_form').on( 'submit', function(e){
+		e.preventDefault();
 		var form = $(this);
 
 		$.ajax({
@@ -25,12 +27,12 @@ $(document).ready( function(){
 					form.find('.message.error').show();
 				}
 			},
-			error: function(data) {
+			error: function() {
 				form.find('.message.error').show();
 			},
 			dataType: 'json'
 		});
-		return false;
+
 	});
 
 });
