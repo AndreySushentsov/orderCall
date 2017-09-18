@@ -21,10 +21,10 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
 				$settings = $plugin->getSettings();
 
         if (isset($settings['sender'])){
-          $sender = $settings['sender'];
+            $sender = $settings['sender'];
         }
         if (isset($settings['pecipient'])){
-          $recipient = $settings['pecipient'];
+            $recipient = $settings['pecipient'];
         }
 				$mail_message = new waMailMessage($subject, $body);
 				$mail_message->setFrom($sender);
