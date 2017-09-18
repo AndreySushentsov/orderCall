@@ -14,7 +14,11 @@ class shopOrdercallViewHelper
     $html = '';
 
     //wa_dump($settings);
-    if($settings['is_enable'] == '1'){
+    if (isset($settings['is_enable'])){
+      $is_enable = $settings['is_enable'];
+    }
+    
+    if($is_enable == '1'){
 
       $view = wa()->getView();
       $path = $plugin->getPath().'/templates/Ordercall.html';
