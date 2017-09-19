@@ -1,10 +1,10 @@
 <?php
-/** @var shopOrdercallPlugin $plugin */
+
 
 class shopOrdercallViewHelper
 {
     public static function display()
-    {
+    {   /** @var shopOrdercallPlugin $plugin */
         $plugin = wa("shop")->getPlugin("ordercall");
         $settings = $plugin->getSettings();
         $html = ;
