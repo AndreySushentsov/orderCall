@@ -1,10 +1,4 @@
 <?php
-
-/**
- *
- */
-
-
 class shopOrdercallViewHelper
 {
     public static function display()
@@ -13,14 +7,17 @@ class shopOrdercallViewHelper
         $settings = $plugin->getSettings();
         $html = '';
 
-        if (!isset($settings['is_enable'])){
+        if (!isset($settings['is_enable']))
+        {
             $is_enable = 0;
         }
-        else {
+        else
+        {
             $is_enable = $settings['is_enable'];
         }
 
-        if ($is_enable == '1'){
+        if ($is_enable == '1')
+        {
             $view = wa()->getView();
             $path = $plugin->getPath().'/templates/Ordercall.html';
             $url = $plugin->getPluginStaticUrl();
@@ -32,7 +29,6 @@ class shopOrdercallViewHelper
             'shop/frontend/sendForm',
             array('plugin' => 'ordercall')
         );
-
         return $html;
     }
 }

@@ -11,7 +11,7 @@ $(document).ready(function () {
 		$(this).closest('.overlay').hide();
 	});
 
-	$('.order_form').on('submit', function (e) {
+	$('.order-form').on('submit', function (e) {
 		e.preventDefault();
 		var form = $(this);
 
@@ -19,7 +19,7 @@ $(document).ready(function () {
 			type: form.attr("method"),
 			url: form.attr("action"),
 			data: form.serialize(),
-			dataType:'html',
+			dataType: 'json',
 			success: function (response) {
 				if (response.data){
 					form.find('.message.ok').text(response.data).show();
@@ -30,8 +30,7 @@ $(document).ready(function () {
 			},
 			error: function () {
 				form.find('.message.error').show();
-			},
-			dataType: 'json'
+			}
 		});
 	});
 });

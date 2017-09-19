@@ -3,13 +3,13 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
 {
     public function execute()
     {
-        if (waRequest::isXMLHttpRequest()){
-
+        if (waRequest::isXMLHttpRequest())
+        {
             $name = waRequest::post('name');
             $phone =  waRequest::post('phone');
 
-            if ($name != '' && $phone != ''){
-
+            if ($name != '' && $phone != '')
+            {
                 $subject = 'Заказ обратного звонка';
 
                 $body = "Имя: {$name}, Номер телефона: {$phone}";
@@ -17,19 +17,24 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
                 $plugin = wa("shop")->getPlugin("ordercall");
                 $settings = $plugin->getSettings();
 
-                if (!isset($settings['sender'])){
+                if (!isset($settings['sender']))
+                {
                     $sender = '';
                 }
-                else {
+                else
+                {
                     $sender = $settings['sender'];
                 }
-                if (!isset($settings['pecipient'])){
+                if (!isset($settings['pecipient']))
+                {
                     $recipient = '';
                 }
-                else {
+                else
+                {
                     $recipient = $settings['pecipient'];
                 }
-                if ($sender != '' && $recipient != '') {
+                if ($sender != '' && $recipient != '')
+                {
                     $mail_message = new waMailMessage($subject, $body);
                     $mail_message->setFrom($sender);
                     $mail_message->setTo($recipient);
