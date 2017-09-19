@@ -4,10 +4,11 @@
 class shopOrdercallViewHelper
 {
     public static function display()
-    {   /** @var shopOrdercallPlugin $plugin */
+    {
+        /** @var shopOrdercallPlugin $plugin */
         $plugin = wa("shop")->getPlugin("ordercall");
         $settings = $plugin->getSettings();
-        $html = ;
+        $html = '';
 
         if (!isset($settings["is_enable"]))
         {
