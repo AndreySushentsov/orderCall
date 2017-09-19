@@ -1,4 +1,6 @@
 <?php
+
+
 return array(
     'sender' => array(
         'title' => /*_wp*/('Отправитель'),
@@ -23,6 +25,6 @@ return array(
                 'title' => 'Включен',
             ),
         ),
-    'control_type' => waHtmlControl::SELECT,
+        'control_type' => waHtmlControl::SELECT,
     ),
 );

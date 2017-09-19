@@ -1,4 +1,6 @@
 <?php
+
+
 class shopOrdercallPluginFrontendSendFormController extends waJsonController
 {
     public function execute()
@@ -25,6 +27,7 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
                 {
                     $sender = $settings['sender'];
                 }
+
                 if (!isset($settings['pecipient']))
                 {
                     $recipient = '';
@@ -33,6 +36,7 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
                 {
                     $recipient = $settings['pecipient'];
                 }
+
                 if ($sender != '' && $recipient != '')
                 {
                     $mail_message = new waMailMessage($subject, $body);

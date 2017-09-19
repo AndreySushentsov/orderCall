@@ -1,7 +1,6 @@
 <?php
-/**
- *
- */
+
+
 class shopOrdercallPlugin extends shopPlugin
 {
     public function getPath()

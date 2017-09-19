@@ -1,4 +1,6 @@
 <?php
+
+
 class shopOrdercallViewHelper
 {
     public static function display()
@@ -24,11 +26,6 @@ class shopOrdercallViewHelper
             $view->assign('url', $url);
             $html = $view->fetch($path);
         }
-
-        $route = wa()->getRouting()->getUrl(
-            'shop/frontend/sendForm',
-            array('plugin' => 'ordercall')
-        );
         return $html;
     }
 }
