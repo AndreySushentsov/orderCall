@@ -7,7 +7,7 @@ return array(
         'value' => 'info@bodysite.ru', // значение по умолчанию
         'control_type' => waHtmlControl::INPUT,
     ),
-    'pecipient' => array(
+    'recipient' => array(
         'title' => /*_wp*/('Email для уведомления'),
         'value' => '', // значение по умолчанию
         'control_type' => waHtmlControl::INPUT,

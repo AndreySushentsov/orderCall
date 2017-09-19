@@ -28,13 +28,13 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
                     $sender = $settings['sender'];
                 }
 
-                if (!isset($settings['pecipient']))
+                if (!isset($settings['recipient']))
                 {
                     $recipient = '';
                 }
                 else
                 {
-                    $recipient = $settings['pecipient'];
+                    $recipient = $settings['recipient'];
                 }
 
                 if ($sender != '' && $recipient != '')
