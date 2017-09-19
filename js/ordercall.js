@@ -1,18 +1,17 @@
-$(document).ready( function(){
-
+$(document).ready(function () {
 	$('input[name=phone]').mask("+7 (999) 999?-9999");
 
-	$('.ordercall-link').click(function(e){
+	$('.ordercall-link').click(function (e) {
 		e.preventDefault();
 		$(this).parent().find('.overlay').show();
 	});
 
-	$('.close').click(function(e){
+	$('.close').click(function (e) {
 		e.preventDefault();
 		$(this).closest('.overlay').hide();
 	});
 
-	$('.order_form').on( 'submit', function(e){
+	$('.order_form').on('submit', function (e) {
 		e.preventDefault();
 		var form = $(this);
 
@@ -20,14 +19,16 @@ $(document).ready( function(){
 			type: form.attr("method"),
 			url: form.attr("action"),
 			data: form.serialize(),
-			success: function(data){
-				if(data){
-					form.find('.message.ok').text(data.data).show();
-				}else{
+			dataType:'html',
+			success: function (response) {
+				if (response.data){
+					form.find('.message.ok').text(response.data).show();
+				}
+				else {
 					form.find('.message.error').show();
 				}
 			},
-			error: function() {
+			error: function () {
 				form.find('.message.error').show();
 			},
 			dataType: 'json'

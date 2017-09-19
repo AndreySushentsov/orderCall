@@ -13,7 +13,10 @@ class shopOrdercallViewHelper
         $settings = $plugin->getSettings();
         $html = '';
 
-        if (isset($settings['is_enable'])){
+        if (!isset($settings['is_enable'])){
+            $is_enable = 0;
+        }
+        else {
             $is_enable = $settings['is_enable'];
         }
 

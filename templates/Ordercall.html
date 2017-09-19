@@ -1,10 +1,6 @@
 <link rel="stylesheet" href="{$url}css/ordercall.css">
-
-
 <div>
-
 	<a href="#" class="ordercall-link">Заказать звонок</a>
-
 	<div class="overlay">
 		<div class="form-wrapper">
 			<form class="order_form" method="POST" action="{$wa->getUrl('shop/frontend/ordercall', ['plugin' => 'ordercall'], true)}">
@@ -17,12 +13,10 @@
 				<input type="text" name="phone" required><br />
 				<input type="submit" value="Отправить">
 				<div class="message ok"></div>
-				<div class="message error">Сообщение не отправлено, напишите нам об этом на почту "e-mail@mail.ru"</div>
+				<div class="message error">Сообщение не отправлено, напишите нам об этом на почту "info@bodysite.ru"</div>
 			</form>
 		</div>
 	</div>
-
-<script src="{$url}js/jquery.maskedinput.min.js"></script>
-<script src="{$url}js/ordercall.js"></script>
-
+	<script src="{$url}js/jquery.maskedinput.min.js"></script>
+	<script src="{$url}js/ordercall.js"></script>
 </div>

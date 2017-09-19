@@ -1,7 +1,4 @@
 <?php
-/**
- *
- */
 class shopOrdercallPluginFrontendSendFormController extends waJsonController
 {
     public function execute()
@@ -20,18 +17,26 @@ class shopOrdercallPluginFrontendSendFormController extends waJsonController
                 $plugin = wa("shop")->getPlugin("ordercall");
                 $settings = $plugin->getSettings();
 
-                if (isset($settings['sender'])){
+                if (!isset($settings['sender'])){
+                    $sender = '';
+                }
+                else {
                     $sender = $settings['sender'];
                 }
-                if (isset($settings['pecipient'])){
+                if (!isset($settings['pecipient'])){
+                    $recipient = '';
+                }
+                else {
                     $recipient = $settings['pecipient'];
                 }
-                $mail_message = new waMailMessage($subject, $body);
-                $mail_message->setFrom($sender);
-                $mail_message->setTo($recipient);
-                $mail_message->send();
+                if ($sender != '' && $recipient != '') {
+                    $mail_message = new waMailMessage($subject, $body);
+                    $mail_message->setFrom($sender);
+                    $mail_message->setTo($recipient);
+                    $mail_message->send();
 
-                $this->response = 'Сообщение успешно отправлено!';
+                    $this->response = 'Сообщение успешно отправлено!';
+                }
             }
         }
     }

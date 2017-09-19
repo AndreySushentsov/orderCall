@@ -5,7 +5,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,.3);
+	background-color: rgba(0,0,0, .3);
 	z-index: 10;
 }
 
@@ -17,7 +17,7 @@
 	margin-left: -250px;
 	z-index: 10;
 	background-color: #fff;
-	box-shadow: 0 0 0 5px rgba(0,0,0,.3);
+	box-shadow: 0 0 0 5px rgba(0,0,0, .3);
 	padding: 40px;
 	text-align: center;
 }
@@ -33,7 +33,6 @@
 .order_form h1 {
 	font-size: 20px;
 	margin-bottom: 40px;
-
 }
 
 .order_form label {
@@ -57,7 +56,4 @@
 
 .message.error {
 	color: red;
-}
-.closed__link{
-	display: none;
 }
